@@ -9,17 +9,17 @@ export class ProductListComponent {
 
   productos:any[]=[
     {
-      "producto":1,
+      "productoID":1,
       "Modelo":"Sentra",
       "Descripcion":"a puertas",
       "Precio":2000,
       "year":2023,
       "Marca":"NISSAN",
       "Color":"Azul",
-      "ImagenURL":""
+      "ImagenURL":"https://regeneracion.mx/wp-content/uploads/2022/06/vochito6.jpg"
     },
     {
-      "producto":2,
+      "productoID":2,
       "Modelo":"Rio",
       "Descripcion":"4 puertas",
       "Precio":2000,
@@ -29,7 +29,7 @@ export class ProductListComponent {
       "ImagenURL":""
     },
     {
-      "producto":3,
+      "productoID":3,
       "Modelo":"Rio",
       "Descripcion":"4 puertas",
       "Precio":23000,
