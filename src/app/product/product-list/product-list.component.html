@@ -1,47 +1,52 @@
 <div class="card">
   <div class="card-header">
-  Lista de productos
+      Lista de productos
   </div>
-<div class="card-body">
-
-
-  <div class="row ">
-    <div class="col-mdm-2">
-      filtra por:
-    </div>
-    <div class=" col-md-4">
-      <input type="text" class="form-control">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h3>Filtro:</h3>
-    </div>
-    <div class="table-responsive">
-      <table class="table"*ngIf="productos.length">
-        <thead>
-          <tr>
-            <th>Imagen</th>
-            <th>Modelo</th>
-            <th>Descripcion</th>
-            <th>Ano</th>
-            <th>Precio</th>
-            <th>Marca</th>
-            <th>Color</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let productos of productos">
-            <td><img src="{{productos.ImagenURL}}"/></td>
-            <td>{{productos.Modelo}}</td>
-            <td>{{productos.Descripcion}}</td>
-            <td>{{productos.Year}}</td>
-            <td>{{productos.Precio}}</td>
-            <td>{{productos.Marca}}</td>
-            <td>{{productos.Color}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="card-body">
+      <div class="row">
+          <div class="col-md-2">
+              Filtra por:
+          </div>
+          <div class="col-md-4">
+              <!--Instanciamos el modelo para hacerlo bidireccional y se actualize en timepo real-->
+              <input type="text" [(ngModel)]="listFilter" class="form-control">
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <!--Muestra lo que se añande en el input de ngModel-->
+              <h3>Filtro: {{listFilter}}</h3>
+          </div>
+      </div>
+      <div class="table-responsive">
+          <table class="table"*ngIf="productos.length">
+              <thead>
+                  <tr>
+                      <th>
+                          <!--Se usan () para poder llamar a un metodo-->         <!--Se añade un if para cambiar un texto de esta manera-->
+                          <button class="btn btn-primary" (click)="muestImg()"> {{muestraImg ? "Oculta ":"Muestra "}}Imagen</button>
+                      </th>
+                      <th>Modelo</th>
+                      <th>Descripción</th>
+                      <th>Año</th>
+                      <th>Precio</th>
+                      <th>Marca</th>
+                      <th>Color</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let producto of productos | productoFilter:listFilter">
+                      <!--Se usa [] para poder llamar objetos de nuestro codigo y ponerlos en las propiedades de html-->
+                      <td><img [src]="producto.ImagenUrl" [title]="producto.Modelo" [style.width.px]="imageWidth" [style.margin.px]="imageMargin" *ngIf="muestraImg"/></td>
+                      <td>{{producto.Modelo}}</td>
+                      <td>{{producto.Descripcion}}</td>
+                      <td>{{producto.Year | date}}</td>
+                      <td>{{producto.Precio | currency}}</td>
+                      <td>{{producto.Marca | uppercase}}</td>
+                      <td>{{producto.Color}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
   </div>
 </div>
