@@ -1,0 +1,60 @@
+<div>
+  <!-- Título principal de la página o formulario -->
+  <h1>CINEANG</h1>
+
+  <!-- El formulario usa la directiva Angular `formGroup` para trabajar con formularios reactivos.
+       `formulario` es una variable que contiene la estructura del formulario definida en el componente .
+  -->
+  <form [formGroup]="formulario">
+
+    <!-- Campo de entrada para el nombre del comprador -->
+    <div>
+      <!-- Etiqueta asociada al campo de texto. El atributo `for` se enlaza con el campo 'nombre' -->
+      <label for="nombre">Nombre</label>
+      <!-- Campo de entrada de tipo texto. El atributo `formControlName` indica que está asociado
+           al control del formulario llamado 'nombre' en el componente TypeScript -->
+      <input formControlName="nombre" type="text">
+    </div>
+
+    <!-- Campo de entrada para la cantidad de compradores -->
+    <div>
+      <!-- Etiqueta para la cantidad de compradores -->
+      <label for="cantCompradores">Cantidad de compradores</label>
+      <!-- Campo de entrada de tipo número. También está enlazado con el control 'cantCompradores' del formulario -->
+      <input formControlName="cantCompradores" type="number">
+    </div>
+
+    <!-- Sección para seleccionar si el comprador tiene tarjeta CINEANG o no -->
+    <div>
+      <!-- Opción de selección (radio button) para indicar que el usuario tiene tarjeta CINEANG -->
+      <label>
+        <!-- El valor del botón es '1', y está asociado al control 'tarjeta'. Solo puede estar seleccionada una opción. -->
+        <input type="radio" formControlName="tarjeta" value="1"> Si tengo tarjeta CINEANG
+      </label>
+
+      <!-- Opción de selección (radio button) para indicar que el usuario no tiene tarjeta CINEANG -->
+      <label>
+        <!-- El valor del botón es '2'. Esto permite elegir entre las dos opciones -->
+        <input type="radio" formControlName="tarjeta" value="2"> No tengo tarjeta CINEANG
+      </label>
+    </div>
+
+    <!-- Campo de entrada para indicar la cantidad de boletos que el comprador desea -->
+    <div>
+      <!-- Etiqueta para la cantidad de boletos -->
+      <label for="cantBoletos">Cantidad de boletos</label>
+      <!-- Campo de entrada de tipo número, enlazado al control del formulario llamado 'cantBoletos' -->
+      <input formControlName="cantBoletos" type="number">
+    </div>
+
+    <!-- Botón para enviar la información del formulario.
+         El evento `(click)="realizarCompra()"` se enlaza a una función en el componente TypeScript que ejecutará la acción de compra.
+    -->
+    <button (click)="realizarCompra()" type="button">Comprar Boletos</button>
+
+    <!-- Muestra un mensaje final basado en el valor de la variable `mensajeFinal`, que es una propiedad en el componente.
+         Angular interpolará su valor en la vista ({{mensajeFinal}}).
+    -->
+    <p>{{mensajeFinal}}</p>
+  </form>
+</div>

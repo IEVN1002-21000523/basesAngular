@@ -1,0 +1,75 @@
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+.color-negro {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+.color-cafe {
+    background-color: #8B4513;
+    color: #FFFFFF;
+}
+.color-rojo {
+    background-color: #FF0000;
+    color: #FFFFFF;
+}
+.color-naranja {
+    background-color: #FFA500;
+    color: #000000;
+}
+.color-amarillo {
+    background-color: #FFFF00;
+    color: #000000;
+}
+.color-verde {
+    background-color: #008000;
+    color: #FFFFFF;
+}
+.color-azul {
+    background-color: #0000FF;
+    color: #FFFFFF;
+}
+.color-morado {
+    background-color: #800080;
+    color: #FFFFFF;
+}
+.color-gris {
+    background-color: #808080;
+    color: #FFFFFF;
+}
+.color-blanco {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+.tolerancia-oro {
+    background-color: #FFD700;
+    color: #000000;
+}
+.tolerancia-plata {
+    background-color: #C0C0C0;
+    color: #000000;
+}
+/* Estilo general para el contenedor del formulario */
+div {
+  max-width: 600px; /* Ancho máximo del contenedor */
+  margin: 20px auto; /* Centrado horizontal con margen superior */
+  padding: 20px; /* Espacio interno */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Color de fondo claro */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+<div class="container">
+  <h2>Selector de bandas de resistencias</h2>
+  <form [formGroup]="resistencia">
+    <div>
+      <label for="color1">Primera Banda</label>
+      <select id="color1" formControlName="color1">
+        <option *ngFor="let color of colores">{{color}}</option>
+      </select>
+    </div>
+    <div>
+      <label for="color2">Segunda Banda</label>
+      <select id="color2" formControlName="color2">
+        <option *ngFor="let color of colores">{{color}}</option>
+      </select>
+    </div>
+    <div>
+      <label for="color3">Tercera Banda</label>
+      <select id="color3" formControlName="color3">
+        <option *ngFor="let color of colores">{{color}}</option>
+      </select>
+    </div>
+    <div>
+      <p>Tolerancia</p>
+      <label>
+        <input type="radio" formControlName="tolerancia" value="Oro"> Oro
+      </label>
+      <label>
+        <input type="radio" formControlName="tolerancia" value="Plata"> Plata
+      </label>
+    </div>
+    <button type="button" (click)="calcular()">Registrar</button>
+  </form>
+  <div class="resultado">
+    <table>
+      <thead>
+        <tr>
+          <th>Color1</th>
+          <th>Color2</th>
+          <th>Color3</th>
+          <th>Tolerancia</th>
+          <th>Valor</th>
+          <th>Valor Máximo</th>
+          <th>Valor Mínimo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td [ngClass]="['color-' + color1Seleccionado]">{{resistencia.get('color1')?.value}}</td>
+          <td [ngClass]="['color-' + color2Seleccionado]">{{resistencia.get('color2')?.value}}</td>
+          <td [ngClass]="['color-' + color3Seleccionado]">{{resistencia.get('color3')?.value}}</td>
+          <td [ngClass]="['tolerancia-' + toleranciaSeleccionada]">{{resistencia.get('tolerancia')?.value}}</td>
+          <td>{{valor}}</td>
+          <td>{{valorMax}}</td>
+          <td>{{valorMin}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

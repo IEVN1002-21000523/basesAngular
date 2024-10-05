@@ -52,6 +52,6 @@ export class ProductListComponent {
       "Marca": "KIA",
       "Color": "Azul",
       "ImagenUrl": "https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMzE2MzM5L0VYVEVSSU9SLWZyb250U2lkZVBpbG90TmVhci0xNzE1NjMwMTcxNjQwLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU0MCwiaGVpZ2h0IjozMTB9fX0="
-    }
-  ]
+    }
+  ]
 }
